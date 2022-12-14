@@ -68,7 +68,7 @@ def notification():
             db.session.commit()
 
 
-            message = ServiceBusMessage(str(notification.id))
+            message = Message(str(notification.id))
             queue_client.send_messages(message)
 
             ##################################################
